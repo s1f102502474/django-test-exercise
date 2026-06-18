@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from todo import views as todo_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # ルートパス('/')にアクセスした際、index関数を呼び出す設定を追加する
+    path('', todo_views.index, name='index'),
 ]
